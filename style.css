@@ -1,0 +1,22 @@
+.item {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: rgba(219, 214, 207, 0.336);
+    border-style: dashed;
+    border-radius: 5px;
+    
+    
+}
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #333;
+ 
+
+}
+#item-list{
+    padding-left: 400px;
+    padding-right: 400px; 
+    
+}
