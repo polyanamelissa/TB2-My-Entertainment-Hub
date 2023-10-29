@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Entertainmant Hub</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+</head>
+<body>
+    <h1>My Entertainmant Hub</h1>
+
+    <!-- Formulário para adicionar itens -->
+    <form id="item-form">
+        <label for="categoria">Digite o livro/jogo/música/filme:</label>
+        <input type="text" id="item-name" placeholder="ex.: Starwars..." required>
+
+        <select id="category" required>
+            <option value="livro">Livro</option>
+            <option value="jogo">Jogo</option>
+            <option value="musica">Música</option>
+            <option value="filme">Filme</option>
+        </select>
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <!-- Lista de itens -->
+    <div id="item-list"></div>
+
+    <!-- Formulário para filtrar por categoria -->
+    <form id="filter-form">
+        <select id="filter-category">
+            <option value="all">Todas as Categorias</option>
+        </select>
+        <button type="submit">Filtrar</button>
+    </form>
+    <script src="index.js"></script>
+</body>
+</html>
+
