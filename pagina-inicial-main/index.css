@@ -9,12 +9,12 @@
     
 }
 body {
+    background-color: #f2f2f2;
     font-family: Arial, sans-serif;
     text-align: center;
     color: #333;
- 
-
 }
+
 #item-list{
     padding-left: 400px;
     padding-right: 400px; 
