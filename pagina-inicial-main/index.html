@@ -1,67 +1,38 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-	<title>Login</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
-    <link rel="stylesheet" href="minimal.css">
-	<link rel="stylesheet" type="text/css" href="login.css">
+    <title>My Entertainmant Hub</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+
 </head>
 <body>
-	
-	<div class="container">
-		<div class="container-login">
-			<div class="wrap-login">
-				<form class="login-form">
-					<span class="login-form-title">
-						Faça o login
-					</span>
+    <h1>My Entertainmant Hub</h1>
 
-					<div class="wrap-input margin-top-35 margin-bottom-35">
-						<input class="input-form" type="text" name="email" autocomplete="off">
-						<span class="focus-input-form" data-placeholder="E-mail"></span>
-					</div>
+    <!-- Formulário para adicionar itens -->
+    <form id="item-form">
+        <label for="categoria">Digite o livro/jogo/música/filme:</label>
+        <input type="text" id="item-name" placeholder="ex.: Starwars..." required>
 
-					<div class="wrap-input margin-bottom-35">
-						<input class="input-form" type="password" name="password">
-						<span class="focus-input-form" data-placeholder="Senha"></span>
-					</div>
+        <select id="category" required>
+            <option value="livro">Livro</option>
+            <option value="jogo">Jogo</option>
+            <option value="musica">Música</option>
+            <option value="filme">Filme</option>
+        </select>
+        <button type="submit">Adicionar</button>
+    </form>
 
-					<div class="container-login-form-btn">
-						<button class="login-form-btn">
-							Login
-						</button>
-					</div>
+    <!-- Lista de itens -->
+    <div id="item-list"></div>
 
-					<ul class="login-utils">
-						<li class="margin-bottom-8 margin-top-8">
-							<span class="text1">
-								Esqueceu sua
-							</span>
-
-							<a href="#" class="text2">
-								senha?
-							</a>
-						</li>
-
-						<li>
-							<span class="text1">
-								Não tem conta?
-							</span>
-
-							<a href="#" class="text2">
-								Criar
-							</a>
-						</li>
-					</ul>
-				</form>
-			</div>
-			<img src="fonts/login.png" width="300" height="300" class="margin-left-50" />
-		</div>
-	</div>
-	
-    <script src="login.js"></script>
-
+    <!-- Formulário para filtrar por categoria -->
+    <form id="filter-form">
+        <select id="filter-category">
+            <option value="all">Todas as Categorias</option>
+        </select>
+        <button type="submit">Filtrar</button>
+    </form>
+    <script src="index.js"></script>
 </body>
 </html>
+
