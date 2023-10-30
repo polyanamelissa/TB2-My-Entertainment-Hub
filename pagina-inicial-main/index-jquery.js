@@ -30,3 +30,24 @@ $(document).ready(function() {
             $filterCategory.append(`<option value="${category}">${category}</option>`);
         });
     }
+    $filterForm.on("submit", function(event) {
+        event.preventDefault();
+        const selectedCategory = $filterCategory.val();
+        const items = JSON.parse(localStorage.getItem("items")) || [];
+
+        if (selectedCategory === "all") {
+            // Mostrar todos os itens
+            $itemList.html("");
+            items.forEach(item => {
+                $itemList.append($("<div class='item'></div>").text(`${item.name} - ${item.category}`));
+            });
+        } else {
+            // Mostrar apenas itens da categoria selecionada
+            $itemList.html("");
+            items.forEach(item => {
+                if (normalizeString(item.category.toLowerCase()) === selectedCategory) {
+                    $itemList.append($("<div class='item'></div>").text(`${item.name} - ${item.category}`));
+                }
+            });
+        }
+    });
