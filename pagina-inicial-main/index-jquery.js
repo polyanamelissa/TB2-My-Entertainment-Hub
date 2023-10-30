@@ -17,7 +17,5 @@ $(document).ready(function() {
        const items = JSON.parse(localStorage.getItem("items")) || [];
         items.push({ name, category: selectedCategory });
         localStorage.setItem("items", JSON.stringify(items));
-
-        // Atualizar a lista de categorias no filtro
         updateCategoryFilter();
     });
