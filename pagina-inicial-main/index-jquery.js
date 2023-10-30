@@ -42,7 +42,7 @@ $(document).ready(function() {
                 $itemList.append($("<div class='item'></div>").text(`${item.name} - ${item.category}`));
             });
         } else {
-            // Mostrar apenas itens da categoria selecionada
+            
             $itemList.html("");
             items.forEach(item => {
                 if (normalizeString(item.category.toLowerCase()) === selectedCategory) {
