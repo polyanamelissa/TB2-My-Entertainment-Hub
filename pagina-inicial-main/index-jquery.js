@@ -19,3 +19,14 @@ $(document).ready(function() {
         localStorage.setItem("items", JSON.stringify(items));
         updateCategoryFilter();
     });
+
+    function updateCategoryFilter() {
+        const items = JSON.parse(localStorage.getItem("items")) || [];
+        const categories = items.map(item => normalizeString(item.category.toLowerCase()));
+        const uniqueCategories = [...new Set(categories)];
+
+        $filterCategory.html("");
+        uniqueCategories.forEach(category => {
+            $filterCategory.append(`<option value="${category}">${category}</option>`);
+        });
+    }
