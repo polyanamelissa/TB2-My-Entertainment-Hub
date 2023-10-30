@@ -36,7 +36,7 @@ $(document).ready(function() {
         const items = JSON.parse(localStorage.getItem("items")) || [];
 
         if (selectedCategory === "all") {
-            // Mostrar todos os itens
+            
             $itemList.html("");
             items.forEach(item => {
                 $itemList.append($("<div class='item'></div>").text(`${item.name} - ${item.category}`));
