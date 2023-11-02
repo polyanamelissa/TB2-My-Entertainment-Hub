@@ -5,54 +5,58 @@ $(document).ready(function() {
     const $itemList = $("#item-list");
     const $filterForm = $("#filter-form");
     const $filterCategory = $("#filter-category");
-  
+
     $itemForm.on("submit", function(event) {
-          event.preventDefault();
-          const name = $itemName.val();
-          const selectedCategory = $category.val();
-          const $itemDiv = $("<div class='item'></div>").text(`${name} - ${selectedCategory}`);
-          $itemList.append($itemDiv);
-          $itemName.val("");
-  
-         const items = JSON.parse(localStorage.getItem("items")) || [];
-          items.push({ name, category: selectedCategory });
-          localStorage.setItem("items", JSON.stringify(items));
-          updateCategoryFilter();
-      });
-  
-      function updateCategoryFilter() {
-          const items = JSON.parse(localStorage.getItem("items")) || [];
-          const categories = items.map(item => normalizeString(item.category.toLowerCase()));
-          const uniqueCategories = [...new Set(categories)];
-  
-          $filterCategory.html("");
-          uniqueCategories.forEach(category => {
-              $filterCategory.append(`<option value="${category}">${category}</option>`);
-          });
-      }
-      $filterForm.on("submit", function(event) {
-          event.preventDefault();
-          const selectedCategory = $filterCategory.val();
-          const items = JSON.parse(localStorage.getItem("items")) || [];
-  
-          if (selectedCategory === "all") {
-              
-              $itemList.html("");
-              items.forEach(item => {
-                  $itemList.append($("<div class='item'></div>").text(`${item.name} - ${item.category}`));
-              });
-          } else {
-              
-              $itemList.html("");
-              items.forEach(item => {
-                  if (normalizeString(item.category.toLowerCase()) === selectedCategory) {
-                      $itemList.append($("<div class='item'></div>").text(`${item.name} - ${item.category}`));
-                  }
-              });
-          }
-      });
+        event.preventDefault();
+        const name = $itemName.val();
+        const selectedCategory = $category.val();
+        const $itemDiv = $("<div class='item'></div>").text(`${name} - ${selectedCategory}`);
+        $itemList.append($itemDiv);
+        $itemName.val("");
+
+        const items = JSON.parse(localStorage.getItem("items")) || [];
+        items.push({ name, category: selectedCategory });
+        localStorage.setItem("items", JSON.stringify(items));
+        updateCategoryFilter();
+    });
+
+    function updateCategoryFilter() {
+        const items = JSON.parse(localStorage.getItem("items")) || [];
+        const categories = items.map(item => item.category);
+        const uniqueCategories = [...new Set(categories)];
+
+        $filterCategory.html("");
+        $filterCategory.append("<option value='Todas as Categorias'>Todas as Categorias</option>");
+        uniqueCategories.forEach(category => {
+            $filterCategory.append(`<option value="${category}">${category}</option>`);
+        });
+    }
+
+    $filterForm.on("submit", function(event) {
+        event.preventDefault();
+        const selectedCategory = $filterCategory.val();
+        const items = JSON.parse(localStorage.getItem("items")) || [];
+
+        $itemList.html(""); //limpa a lista antes de recriá-la com os itens filtrados
+
+        if (selectedCategory === "all") {
+            items.forEach(item => {
+                const $itemDiv = $("<div class='item'></div>").text(`${item.name} - ${item.category}`);
+                $itemList.append($itemDiv);
+            });
+        } else {
+            items.forEach(item => {
+                if (item.category === selectedCategory) {
+                    const $itemDiv = $("<div class='item'></div>").text(`${item.name} - ${item.category}`);
+                    $itemList.append($itemDiv);
+                }
+            });
+        }
+    });
+
     function normalizeString(str) {
-          return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-      }
-      updateCategoryFilter();
-  });
+        return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+
+    updateCategoryFilter();
+});
