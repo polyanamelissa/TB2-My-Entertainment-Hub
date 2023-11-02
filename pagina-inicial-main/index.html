@@ -4,7 +4,7 @@
     <title>My Entertainmant Hub</title>
     <link rel="stylesheet" type="text/css" href="index.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" type="imagex/png" href="icone(pagina-inicial-main).png">
+    <link rel="shortcut icon" type="image/x-icon" href="icone(pagina-inicial-main).png">
 </head>
 <body>
     <h1>My Entertainmant Hub</h1>
@@ -15,11 +15,13 @@
         <input type="text" id="item-name" placeholder="ex.: Starwars..." required>
 
         <select id="category" required>
-            <option value="livro">Livro</option>
-            <option value="jogo">Jogo</option>
-            <option value="musica">Música</option>
-            <option value="filme">Filme</option>
+            <option value="Todas as Categorias">Todas as Categorias</option>
+            <option value="livros">Livros</option>
+            <option value="jogo">Jogos</option>
+            <option value="musica">Músicas</option>
+            <option value="filme">Filmes</option>
         </select>
+
         <button type="submit">Adicionar</button>
     </form>
 
@@ -28,12 +30,9 @@
 
     <!-- Formulário para filtrar por categoria -->
     <form id="filter-form">
-        <select id="filter-category">
-            <option value="all">Todas as Categorias</option>
-        </select>
+        <select id="filter-category"></select>
         <button type="submit">Filtrar</button>
     </form>
     <script src="index-jquery.js"></script>
 </body>
 </html>
-
