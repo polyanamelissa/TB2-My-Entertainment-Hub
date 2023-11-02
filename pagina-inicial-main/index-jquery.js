@@ -47,7 +47,7 @@ $(document).ready(function() {
         } else {
             items.forEach(item => {
                 if (item.category === selectedCategory) {
-                    const $itemDiv = $("<div class='item'></div>").text(`${item.name} - ${item.category}`);
+                    const $itemDiv = $("<div class='item'></div>").text(`${item.name}`);
                     $itemList.append($itemDiv);
                 }
             });
@@ -59,4 +59,15 @@ $(document).ready(function() {
     }
 
     updateCategoryFilter();
+});
+
+/*AJAX */
+$ajax({
+    url: 'https://swapi.dev/api/films/',
+    dataType:'json',
+    success: function (resposta) {
+        alert(resposta.count);
+        let texto = resposta.results[2].title;
+        alert(texto);
+    }
 });
