@@ -61,13 +61,16 @@ $(document).ready(function() {
     updateCategoryFilter();
 });
 
+
 /*AJAX */
-$ajax({
-    url: 'https://swapi.dev/api/films/',
-    dataType:'json',
-    success: function (resposta) {
-        alert(resposta.count);
-        let texto = resposta.results[2].title;
-        alert(texto);
+$.ajax({
+    url: 'rascunho.txt',
+    dataType:'html',
+    data: "",
+    success: function(data) {
+        document.getElementById("tit").innerHTML = data;
+    },
+    error: function(data) {
+        alert("erro " + data);
     }
 });
