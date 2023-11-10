@@ -91,6 +91,7 @@ input:focus {
 }
 
 body {
+
     font-family: Poppins-Bold;
     margin: 0;
     padding: 0;
@@ -99,6 +100,8 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #f0f0f0;
+
+
 }
 
 .cadastro {
@@ -135,7 +138,7 @@ input:focus {
 
 
 #proximo{
-    background-color: #29d;
+    background-color: #39d;
     color: #fff;
     padding: 10px;
     border: none;
@@ -144,7 +147,8 @@ input:focus {
 }
 
 #proximo:hover {
-    background-color: #333333;
+
+    background-color: #334333;
 }
 
 .button-voltar {
@@ -169,6 +173,8 @@ input:focus {
 }
 
 .modal {
+
+
     display: none;
     position: fixed;
     z-index: 1;
@@ -189,16 +195,22 @@ input:focus {
 }
 
 .close {
+
     color: #aaa;
+
     float: right;
+
     font-size: 28px;
+
     font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
     color: black;
+
     text-decoration: none;
+
     cursor: pointer;
 }
 
