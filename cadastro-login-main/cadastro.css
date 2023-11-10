@@ -62,8 +62,23 @@ button:hover {
     background-color: #333333;
 }
 
-.voltar{
-    
-    color: rgb(231, 219, 219);
+.button-voltar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px;
+}
 
+.voltar {
+    background-color: #007bff; 
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+    }
+
+.voltar:hover {
+    background-color: #6e6e6e; 
 }
