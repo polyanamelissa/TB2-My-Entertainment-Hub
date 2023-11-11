@@ -148,6 +148,11 @@ button:hover {
   text-align: center;
 }
 
+.login-form-title::selection{
+  background-color: #333333;
+  color: #29d;
+}
+
 /*
   Input
 */
