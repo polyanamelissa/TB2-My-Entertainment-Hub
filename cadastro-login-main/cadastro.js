@@ -1,30 +1,45 @@
-function openModal() {
-    document.getElementById('jlmodal').style.display = 'block';
-}
 
-function closeModal() {
-    document.getElementById('jlmodal').style.display = 'none';
-} 
+function exibirBalaoMensagem(mensagem, tipo) {
+      var balaoMensagem = document.getElementById('balaoMensagem');
+      balaoMensagem.innerHTML = mensagem;
 
-// adiciona um ouvinte de evento para o botão de redirecionamento
-document.getElementById('proximo').addEventListener('click', function() {
-    
+      if (tipo === 'sucesso') {
+        balaoMensagem.style.backgroundColor = 'rgb(43, 92, 53)';
+        
+      } else if (tipo === 'erro') {
+        balaoMensagem.style.backgroundColor = '#f44336'; 
+        
+      }
 
-    var isValid = true;
-    var formFields = document.querySelectorAll('input');
-    // verifica se todos os campos do formulário estão preenchidos
-    
-    formFields.forEach(function(field) {
-        if (field.value.trim() === '') {
-            isValid = false;
-        }
-    });
+      // exibe o balão de mensagem
+      balaoMensagem.style.display = 'block';
 
-
-    if (!isValid) {
-        openModal();
-    } else {
-        window.location.href = 'index.html';
+      // oculta o balão após alguns segundos
+      setTimeout(function() {
+        balaoMensagem.style.display = 'none';
+      }, 7000); 
     }
-});
-// se todos os campos estiverem preenchidos, redireciona para a página principal (index).
+
+    function salvarCadastro() {
+      var nome = document.getElementById("username").value;
+      var email = document.getElementById("email").value;
+      var senha = document.getElementById("password").value;
+
+      // verifique se os campos não estão vazios
+      if (nome && email && senha) {
+        var cadastro = {
+          username: nome,
+          email: email,
+          password: senha,
+        };
+
+        
+        var cadastroString = JSON.stringify(cadastro);
+
+        localStorage.setItem("cadastro", cadastroString);
+
+        exibirBalaoMensagem('Cadastro salvo com sucesso!', 'sucesso');
+      } else {
+        exibirBalaoMensagem('Por favor, preencha todos os campos.', 'erro');
+      }
+    }
