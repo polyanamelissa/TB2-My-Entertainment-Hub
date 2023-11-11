@@ -423,7 +423,7 @@ a:hover {
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: rgb(185, 23, 23);
     text-decoration: none;
 }
 
@@ -432,7 +432,7 @@ a:hover {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #4caf50;
+    background-color: #29d;
     color: #fff;
     padding: 10px;
     border: none;
@@ -442,7 +442,17 @@ a:hover {
 }
 
 #autores:hover {
-    background-color: #45a049;
+    background-color: #333333;
+}
+
+h2::selection {
+    background-color: #29d; 
+    color: #333333; 
+}
+
+p::selection {
+  background-color: #333333; 
+  color: #29d; 
 }
 
 
