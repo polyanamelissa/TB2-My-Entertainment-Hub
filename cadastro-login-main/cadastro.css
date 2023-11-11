@@ -3,6 +3,11 @@
   src: url("fontes/Poppins-Bold.ttf");
 }
 
+@font-face {
+  font-family: Poppins-SemiBold;
+  src: url("fonts/Poppins-SemiBold.ttf");
+}
+
 body {
   font-family: Poppins-Bold;
   margin: 0;
@@ -52,6 +57,10 @@ input:focus {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.button-proximo {
+  text-align: center;
 }
 
 #proximo:hover {
@@ -113,6 +122,16 @@ input:focus {
   cursor: pointer;
 }
 
-.button-proximo {
-  text-align: center;
+.balao-mensagem {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -410%);
+  max-width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #3498db; 
+  color: #fcecec; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: none; 
 }
