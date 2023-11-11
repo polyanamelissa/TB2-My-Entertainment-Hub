@@ -54,3 +54,21 @@ function redirecionarParaIndex() {
         }, 5000); // Oculta após 5 segundos (5000 milissegundos)
     }
 }
+
+/* função para abrir a modal */
+
+function openModal() {
+    document.getElementById('janelamodal').style.display = 'block';
+}
+
+/* função para fechar a modal */ 
+
+function closeModal() {
+    document.getElementById('janelamodal').style.display = 'none';
+}
+
+
+document.getElementById('autores').addEventListener('click', function() {
+    openModal();
+});
+
