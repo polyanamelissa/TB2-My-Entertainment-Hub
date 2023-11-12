@@ -44,39 +44,3 @@ function exibirBalaoMensagem(mensagem, tipo) {
       }
     }
 
-/*
-
-// código novo gpt
-
-function salvarCadastro() {
-  var email = document.querySelector('input[name="email"]').value;
-  var senha = document.querySelector('input[name="password"]').value;
-
-  if (email.trim() !== "" && senha.trim() !== "") {
-    // Recupera os dados do localStorage
-    var usuariosCadastrados =
-      JSON.parse(localStorage.getItem("usuarios")) || [];
-
-    // Verifica se o email já está cadastrado
-    var emailExistente = usuariosCadastrados.some(function (usuario) {
-      return usuario.email === email;
-    });
-
-    if (emailExistente) {
-      alert("Este email já está cadastrado. Por favor, use outro.");
-    } else {
-      // Adiciona o novo usuário à lista
-      usuariosCadastrados.push({ email: email, password: senha });
-
-      // Salva a lista atualizada no localStorage
-      localStorage.setItem("usuarios", JSON.stringify(usuariosCadastrados));
-
-      alert("Cadastro realizado com sucesso!");
-    }
-  } else {
-    alert("Por favor, preencha todos os campos.");
-  }
-}
-
-
- */
