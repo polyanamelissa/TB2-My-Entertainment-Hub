@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Entertainmant Hub</title>
+    <link rel="stylesheet" type="text/css" href="./pagina-inicial-main/index.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./pagina-inicial-main/icone(pagina-inicial-main).png">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <h1 id="tit">My Entertainmant Hub</h1>
+
+    <!-- Formulário para adicionar itens -->
+    <form id="item-form">
+        <label for="categoria">Digite o livro/jogo/música/filme:</label>
+        <input type="text" id="item-name" placeholder="ex.: Starwars..." required>
+
+        <select id="category" required>
+            <option value="Todas as Categorias">Todas as Categorias</option>
+            <option value="livros">Livros</option>
+            <option value="jogo">Jogos</option>
+            <option value="musica">Músicas</option>
+            <option value="filme">Filmes</option>
+        </select>
+
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <!-- Lista de itens -->
+    <div id="item-list"></div>
+
+    <!-- Formulário para filtrar por categoria -->
+    <form id="filter-form">
+        <select id="filter-category"></select>
+        <button type="submit">Filtrar</button>
+    </form>
+    <script src="./pagina-inicial-main/index-jquery.js"></script>
+</body>
+
+</html>
