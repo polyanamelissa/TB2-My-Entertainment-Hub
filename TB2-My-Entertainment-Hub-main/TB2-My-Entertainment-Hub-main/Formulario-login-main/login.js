@@ -66,33 +66,6 @@ function erro(params) {
     }, 5000); // Oculta após 5 segundos (5000 milissegundos)
 }
 
-/*
-
-//função de verificar "nova"
-
-function verificarLogin() {
-      var emailDigitado = document.querySelector('input[name="email"]').value;
-      var senhaDigitada = document.querySelector('input[name="password"]').value;
-
-      // Recupera os dados do localStorage
-      var usuariosCadastrados = JSON.parse(localStorage.getItem("usuarios")) || [];
-
-      // Verifica se as credenciais correspondem a algum usuário
-      var usuarioEncontrado = usuariosCadastrados.find(function(usuario) {
-        return usuario.email === emailDigitado && usuario.password === senhaDigitada;
-      });
-
-      if (usuarioEncontrado) {
-        // Se as credenciais são corretas, redireciona para o index.html
-        alert('certoo');
-        window.location.href = 'pagina-inicial-main/index.html';
-      } else {
-        // Se não correspondem, exibe balão de aviso
-        exibirBalaoAviso('Email ou senha incorretos.');
-      }
-    }
-
- */
 
 /* função para abrir a modal */
 
