@@ -1,21 +1,22 @@
+/* Adicione as cores específicas para cada categoria */
 .livros {
-    color: blue;
-    background-color: lightblue;
+    color: navy; /* Nova cor da fonte para livros */
+    background-color: #add8e6; /* Novo background para livros */
 }
 
 .jogo {
-    color: green;
-    background-color: lightgreen;
+    color: darkgreen; /* Nova cor da fonte para jogos */
+    background-color: #90ee90; /* Novo background para jogos */
 }
 
 .musica {
-    color: purple;
-    background-color: lavender;
+    color: darkorchid; /* Nova cor da fonte para músicas */
+    background-color: #e6e6fa; /* Novo background para músicas */
 }
 
 .filme {
-    color: red;
-    background-color: lightcoral;
+    color: darkred; /* Nova cor da fonte para filmes */
+    background-color: #f08080; /* Novo background para filmes */
 }
 
 body {
@@ -29,7 +30,7 @@ body {
 h1 {
     font-size: 40px;
     color: #3e77b6;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: 6px 5px 4px rgba(0, 0, 0, 0.5);
 }
 
 form {
@@ -77,11 +78,11 @@ button:hover {
 }
 
 .item {
-    border: 1px solid #ccc;
+    border: 1px solid #ffffff;
     padding: 20px;
     text-align: center;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
 
@@ -119,4 +120,23 @@ button:hover {
     select {
         width: 100%;
     }
+}
+
+#direitos-autorais{
+    color: red;
+}
+
+/*tit*/
+/* Estilo para a div que envolve o título */
+.title-background {
+    background: linear-gradient(to right, #0099FF, #003366); /* Gradiente de azul */
+    padding: 20px;
+    border-radius: 40px;
+    padding-left: 40px;
+ 
+}
+
+/* Estilo para o título dentro da div */
+#tit {
+    color: white; /* Cor do texto branco para contrastar com o fundo azul */
 }
