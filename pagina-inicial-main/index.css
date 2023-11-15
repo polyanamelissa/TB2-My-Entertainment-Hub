@@ -1,33 +1,62 @@
+/* Adicione as cores específicas para cada categoria */
+.livros {
+    color: blue;
+    background-color: lightblue;
+}
+
+.jogo {
+    color: green;
+    background-color: lightgreen;
+}
+
+.musica {
+    color: purple;
+    background-color: lavender;
+}
+
+.filme {
+    color: red;
+    background-color: lightcoral;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     text-align: center;
     color: #333;
     background-size: cover;
     background-position: center;
-
 }
+
 h1 {
     font-size: 40px;
     color: #3e77b6;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
+
 form {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-label, input, select, button {
+
+label,
+input,
+select,
+button {
     margin: 10px;
     font-size: 18px;
 }
-input[type="text"], select {
+
+input[type="text"],
+select {
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 8px;
 }
+
 button {
-    background-color:#6ea3ff;
+    background-color: #6ea3ff;
     color: white;
     border: none;
     padding: 12px 24px;
@@ -35,9 +64,11 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 button:hover {
     background-color: #0056b3;
 }
+
 #item-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -45,43 +76,48 @@ button:hover {
     padding: 20px;
     justify-content: center;
 }
+
 .item {
     border: 1px solid #ccc;
     padding: 20px;
     text-align: center;
-    background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
+
 .item:hover {
     transform: scale(1.05);
 }
+
 /*estilizando o formulário de filtro:*/
 #filter-form {
     margin-top: 20px;
 }
+
 #filter-category {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
 .filtered {
     background-color: #007BFF;
     color: white;
 }
+
 @media only screen and (max-width: 600px) {
     h1 {
-         font-size: 36px;
-        }
+        font-size: 36px;
+    }
 
-     form {
-         width: 80%;
-         margin: 0 auto;
-         }
+    form {
+        width: 80%;
+        margin: 0 auto;
+    }
 
-    input[type="text"], select {
+    input[type="text"],
+    select {
         width: 100%;
     }
 }
-
