@@ -1,22 +1,21 @@
-/* Adicione as cores específicas para cada categoria */
 .livros {
-    color: navy; /* Nova cor da fonte para livros */
-    background-color: #add8e6; /* Novo background para livros */
+    color: navy; 
+    background-color: #add8e6; 
 }
 
 .jogo {
-    color: darkgreen; /* Nova cor da fonte para jogos */
-    background-color: #90ee90; /* Novo background para jogos */
+    color: darkgreen; 
+    background-color: #90ee90; 
 }
 
 .musica {
-    color: darkorchid; /* Nova cor da fonte para músicas */
-    background-color: #e6e6fa; /* Novo background para músicas */
+    color: darkorchid; 
+    background-color: #e6e6fa; 
 }
 
 .filme {
-    color: darkred; /* Nova cor da fonte para filmes */
-    background-color: #f08080; /* Novo background para filmes */
+    color: darkred; 
+    background-color: #f08080;
 }
 
 body {
