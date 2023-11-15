@@ -70,7 +70,5 @@ $.ajax({
     success: function(data) {
         document.getElementById("tit").innerHTML = data;
     },
-    error: function(data) {
-        alert("erro " + data);
-    }
+   
 });
