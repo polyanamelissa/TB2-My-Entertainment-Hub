@@ -36,7 +36,6 @@ function redirecionarParaIndex() {
     if (email === cadastradoObj.email && senha === cadastradoObj.password) {
         window.location.href = "../index.html";
     } else {
-        // Crie um elemento de balão de aviso
         erro();
     }
 }
@@ -60,39 +59,39 @@ function erro(params) {
     var loginForm = document.getElementById("login-form");
     loginForm.appendChild(warningBalloon);
 
-    // Defina um temporizador para remover o balão após alguns segundos (opcional)
     setTimeout(function () {
         loginForm.removeChild(warningBalloon);
     }, 5000); // Oculta após 5 segundos (5000 milissegundos)
 }
 
-/*
 
-//função de verificar "nova"
 
-function verificarLogin() {
+//função de verificar "nova" (NÃO ESTÁ FUNCIONANDO)
+
+/*function verificarLogin() {
       var emailDigitado = document.querySelector('input[name="email"]').value;
       var senhaDigitada = document.querySelector('input[name="password"]').value;
 
-      // Recupera os dados do localStorage
+      //recupera os dados do localStorage
       var usuariosCadastrados = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-      // Verifica se as credenciais correspondem a algum usuário
+      //verifica se as credenciais correspondem a algum usuário
       var usuarioEncontrado = usuariosCadastrados.find(function(usuario) {
         return usuario.email === emailDigitado && usuario.password === senhaDigitada;
       });
 
       if (usuarioEncontrado) {
-        // Se as credenciais são corretas, redireciona para o index.html
+        //se as credenciais são corretas, redireciona para o index.html
         alert('certoo');
-        window.location.href = 'pagina-inicial-main/index.html';
+        window.location.href = '../pagina-inicial-main/index.html';
       } else {
-        // Se não correspondem, exibe balão de aviso
+        //se não correspondem, exibe balão de aviso
         exibirBalaoAviso('Email ou senha incorretos.');
       }
     }
+    */
 
- */
+ 
 
 /* função para abrir a modal */
 
