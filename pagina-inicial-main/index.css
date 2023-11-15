@@ -1,8 +1,10 @@
 body {
-    background-color: #f9f9f9;
     font-family: 'Roboto', sans-serif;
     text-align: center;
     color: #333;
+    background-size: cover;
+    background-position: center;
+
 }
 h1 {
     font-size: 40px;
@@ -82,3 +84,4 @@ button:hover {
         width: 100%;
     }
 }
+
