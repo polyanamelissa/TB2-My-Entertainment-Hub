@@ -1,4 +1,8 @@
-$(document).ready(function() {
+if (!localStorage.getItem("logou")) {
+    window.location.href = "Formulario-login-main/login.html";
+}
+
+$(document).ready(function () {
     const $itemForm = $("#item-form");
     const $itemName = $("#item-name");
     const $category = $("#category");
@@ -6,11 +10,13 @@ $(document).ready(function() {
     const $filterForm = $("#filter-form");
     const $filterCategory = $("#filter-category");
 
-    $itemForm.on("submit", function(event) {
+    $itemForm.on("submit", function (event) {
         event.preventDefault();
         const name = $itemName.val();
         const selectedCategory = $category.val();
-        const $itemDiv = $("<div class='item'></div>").text(`${name} - ${selectedCategory}`);
+        const $itemDiv = $("<div class='item'></div>").text(
+            `${name} - ${selectedCategory}`
+        );
         $itemList.append($itemDiv);
         $itemName.val("");
 
@@ -22,17 +28,21 @@ $(document).ready(function() {
 
     function updateCategoryFilter() {
         const items = JSON.parse(localStorage.getItem("items")) || [];
-        const categories = items.map(item => item.category);
+        const categories = items.map((item) => item.category);
         const uniqueCategories = [...new Set(categories)];
 
         $filterCategory.html("");
-        $filterCategory.append("<option value='Todas as Categorias'>Todas as Categorias</option>");
-        uniqueCategories.forEach(category => {
-            $filterCategory.append(`<option value="${category}">${category}</option>`);
+        $filterCategory.append(
+            "<option value='Todas as Categorias'>Todas as Categorias</option>"
+        );
+        uniqueCategories.forEach((category) => {
+            $filterCategory.append(
+                `<option value="${category}">${category}</option>`
+            );
         });
     }
 
-    $filterForm.on("submit", function(event) {
+    $filterForm.on("submit", function (event) {
         event.preventDefault();
         const selectedCategory = $filterCategory.val();
         const items = JSON.parse(localStorage.getItem("items")) || [];
@@ -40,14 +50,18 @@ $(document).ready(function() {
         $itemList.html(""); //limpa a lista antes de recriá-la com os itens filtrados
 
         if (selectedCategory === "all") {
-            items.forEach(item => {
-                const $itemDiv = $("<div class='item'></div>").text(`${item.name} - ${item.category}`);
+            items.forEach((item) => {
+                const $itemDiv = $("<div class='item'></div>").text(
+                    `${item.name} - ${item.category}`
+                );
                 $itemList.append($itemDiv);
             });
         } else {
-            items.forEach(item => {
+            items.forEach((item) => {
                 if (item.category === selectedCategory) {
-                    const $itemDiv = $("<div class='item'></div>").text(`${item.name}`);
+                    const $itemDiv = $("<div class='item'></div>").text(
+                        `${item.name}`
+                    );
                     $itemList.append($itemDiv);
                 }
             });
@@ -61,14 +75,12 @@ $(document).ready(function() {
     updateCategoryFilter();
 });
 
-
 /*AJAX */
 $.ajax({
-    url: 'rascunho.txt',
-    dataType:'html',
+    url: "rascunho.txt",
+    dataType: "html",
     data: "",
-    success: function(data) {
+    success: function (data) {
         document.getElementById("tit").innerHTML = data;
     },
-   
 });

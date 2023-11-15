@@ -31,16 +31,17 @@ function redirecionarParaIndex() {
     let cadastradoObj = JSON.parse(localStorage.getItem("cadastro"));
 
     if (!localStorage.length) {
-        return null;
+        erro();
     }
     if (email === cadastradoObj.email && senha === cadastradoObj.password) {
+        localStorage.setItem("logou", true);
         window.location.href = "../index.html";
     } else {
         erro();
     }
 }
 
-function erro(params) {
+function erro() {
     var warningBalloon = document.createElement("div");
     warningBalloon.textContent =
         "Por favor, preencha o campo de email e senha antes de fazer login.";
@@ -61,39 +62,8 @@ function erro(params) {
 
     setTimeout(function () {
         loginForm.removeChild(warningBalloon);
-    }, 5000); // Oculta após 5 segundos (5000 milissegundos)
+    }, 3000); // Oculta após 5 segundos (5000 milissegundos)
 }
-
-
-
-//função de verificar "nova" (NÃO ESTÁ FUNCIONANDO)
-
-/*function verificarLogin() {
-      var emailDigitado = document.querySelector('input[name="email"]').value;
-      var senhaDigitada = document.querySelector('input[name="password"]').value;
-
-      //recupera os dados do localStorage
-      var usuariosCadastrados = JSON.parse(localStorage.getItem("usuarios")) || [];
-
-      //verifica se as credenciais correspondem a algum usuário
-      var usuarioEncontrado = usuariosCadastrados.find(function(usuario) {
-        return usuario.email === emailDigitado && usuario.password === senhaDigitada;
-      });
-
-      if (usuarioEncontrado) {
-        //se as credenciais são corretas, redireciona para o index.html
-        alert('certoo');
-        window.location.href = '../pagina-inicial-main/index.html';
-      } else {
-        //se não correspondem, exibe balão de aviso
-        exibirBalaoAviso('Email ou senha incorretos.');
-      }
-    }
-    */
-
- 
-
-/* função para abrir a modal */
 
 function openModal() {
     document.getElementById("janelamodal").style.display = "block";

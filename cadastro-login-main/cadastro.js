@@ -1,76 +1,41 @@
-$(document).ready(function() {
-    const $itemForm = $("#item-form");
-    const $itemName = $("#item-name");
-    const $category = $("#category");
-    const $itemList = $("#item-list");
-    const $filterForm = $("#filter-form");
-    const $filterCategory = $("#filter-category");
+function exibirBalaoMensagem(mensagem, tipo) {
+    var balaoMensagem = document.getElementById("balaoMensagem");
+    balaoMensagem.innerHTML = mensagem;
 
-    $itemForm.on("submit", function(event) {
-        event.preventDefault();
-        const name = $itemName.val();
-        const selectedCategory = $category.val();
-        const $itemDiv = $("<div class='item'></div>").text(`${name} - ${selectedCategory}`);
-        $itemList.append($itemDiv);
-        $itemName.val("");
-
-        const items = JSON.parse(localStorage.getItem("items")) || [];
-        items.push({ name, category: selectedCategory });
-        localStorage.setItem("items", JSON.stringify(items));
-        updateCategoryFilter();
-    });
-
-    function updateCategoryFilter() {
-        const items = JSON.parse(localStorage.getItem("items")) || [];
-        const categories = items.map(item => item.category);
-        const uniqueCategories = [...new Set(categories)];
-
-        $filterCategory.html("");
-        $filterCategory.append("<option value='Todas as Categorias'>Todas as Categorias</option>");
-        uniqueCategories.forEach(category => {
-            $filterCategory.append(`<option value="${category}">${category}</option>`);
-        });
+    if (tipo === "sucesso") {
+        balaoMensagem.style.backgroundColor = "rgb(43, 92, 53)";
+    } else if (tipo === "erro") {
+        balaoMensagem.style.backgroundColor = "#f44336";
     }
 
-    $filterForm.on("submit", function(event) {
-        event.preventDefault();
-        const selectedCategory = $filterCategory.val();
-        const items = JSON.parse(localStorage.getItem("items")) || [];
+    // exibe o balão de mensagem
+    balaoMensagem.style.display = "block";
 
-        $itemList.html(""); //limpa a lista antes de recriá-la com os itens filtrados
+    // oculta o balão após alguns segundos
+    setTimeout(function () {
+        balaoMensagem.style.display = "none";
+        window.location.href = "../Formulario-login-main/login.html";
+    }, 3000);
+}
 
-        if (selectedCategory === "all") {
-            items.forEach(item => {
-                const $itemDiv = $("<div class='item'></div>").text(`${item.name} - ${item.category}`);
-                $itemList.append($itemDiv);
-            });
-        } else {
-            items.forEach(item => {
-                if (item.category === selectedCategory) {
-                    const $itemDiv = $("<div class='item'></div>").text(`${item.name}`);
-                    $itemList.append($itemDiv);
-                }
-            });
-        }
-    });
+function salvarCadastro() {
+    var nome = document.getElementById("username").value;
+    var email = document.getElementById("email").value;
+    var senha = document.getElementById("password").value;
 
-    function normalizeString(str) {
-        return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    // verifique se os campos não estão vazios
+    if (nome && email && senha) {
+        exibirBalaoMensagem("Cadastro salvo com sucesso!", "sucesso");
+        var cadastro = {
+            username: nome,
+            email: email,
+            password: senha,
+        };
+
+        var cadastroString = JSON.stringify(cadastro);
+
+        localStorage.setItem("cadastro", cadastroString);
+    } else {
+        exibirBalaoMensagem("Por favor, preencha todos os campos.", "erro");
     }
-
-    updateCategoryFilter();
-});
-
-
-/*AJAX */
-$.ajax({
-    url: 'rascunho.txt',
-    dataType:'html',
-    data: "",
-    success: function(data) {
-        document.getElementById("tit").innerHTML = data;
-    },
-    error: function(data) {
-        alert("erro " + data);
-    }
-});
+}
