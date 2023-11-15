@@ -1,6 +1,4 @@
-/*
-  Variáveis
-*/
+
 
 :root {
   --main-color: #407bff;
@@ -14,9 +12,7 @@
   --invalid-field: #E74C3C;
 }
 
-/*
-  Fontes
-*/
+/*Fontes*/
 
 @font-face {
   font-family: Poppins-Regular;
@@ -38,9 +34,7 @@
   src: url('fonts/Poppins-SemiBold.ttf'); 
 }
 
-/*
-  Zerar estilos
-*/
+/*estilo*/
 
 * {
 	margin: 0px; 
@@ -67,9 +61,7 @@ button:hover {
 	cursor: pointer;
 }
 
-/*
-  Utilitários
-*/
+
 
 .text1 {
   font-family: Poppins-Regular;
@@ -105,9 +97,7 @@ button:hover {
   margin-left: 50px;
 }
 
-/*
-  Login
-*/
+/*Login*/
 
 .container {
   width: 100%;
@@ -131,9 +121,7 @@ button:hover {
   background: var(--white-color);
 }
 
-/*
-  Formulário
-*/
+/*Formulário*/
 
 .login-form {
   width: 100%;
@@ -153,9 +141,7 @@ button:hover {
   color: #29d;
 }
 
-/*
-  Input
-*/
+/*Input*/
 
 .wrap-input {
   width: 100%;
@@ -230,9 +216,7 @@ button:hover {
   width: 100%;
 }
 
-/*
-  Botão
-*/
+/*Botão*/
 
 .container-login-form-btn {
   width: 100%;
@@ -261,9 +245,7 @@ button:hover {
   background-color: var(--highligth-text);
 }
 
-/*
-  Links - Login utils
-*/
+/*Links */
 
 a {
 	font-family: Poppins-Regular;
@@ -283,9 +265,7 @@ a:hover {
   color: var(--highligth-text);
 }
 
-/*
-  Login utils
-*/
+/*Login*/
 
 .login-utils {
   margin-top: 20px;
