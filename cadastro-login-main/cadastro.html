@@ -9,6 +9,10 @@
   <link rel="stylesheet" type="text/css" href="cadastro.css" />
   <link rel="shortcut icon" type="image/x-icon" href="icone_de_cadastro-removebg-preview.png" />
   <script src="cadastro.js" defer></script>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -30,7 +34,7 @@
 
   <div class="cadastro">
 
-    <form class="cadastro-form">
+    <form class="cadastro-form" id="fff">
       <h1>Cadastro</h1>
 
       <label for="username">Nome de Usuário</label>
@@ -44,8 +48,7 @@
 
       <div class="button-proximo">
         <a href="../pagina-inicial-main/index.html">
-          <button onclick="event.preventDefault(); salvarCadastro()" id="proximo" type="submit">Cadastrar</button>
-
+          <button onclick="event.preventDefault(); salvarCadastro(fff.username.value, fff.email.value, fff.password.value)" id="proximo" type="submit" value="Cadastrar">Cadastrar</button>
         </a>
       </div>
     </form>
