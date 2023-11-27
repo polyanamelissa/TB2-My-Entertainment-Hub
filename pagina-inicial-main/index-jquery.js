@@ -84,3 +84,15 @@ $.ajax({
         document.getElementById("tit").innerHTML = data;
     },
 });
+
+
+$(document).ready(function(){
+		  	var btn = document.querySelector(".btn");
+			var menu = document.querySelector(".menu");
+			var anchors = document.querySelectorAll(".anr");
+
+			btn.addEventListener("click", function(){
+			  this.classList.toggle("active");
+			  menu.classList.toggle("active");
+			});
+		});
