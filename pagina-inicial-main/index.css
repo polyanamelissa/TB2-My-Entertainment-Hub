@@ -183,12 +183,12 @@ body{
   transition: all 0.1s ease;
 }
 
-.btn .one{
+.btn .um{
   top: 30%;
   width: 30px;
 }
 
-.btn .three{
+.btn .tres{
   top: 70%;
   width: 30px;
 }
@@ -258,17 +258,17 @@ body{
   transition: all 0.5s ease;
 }
 
-.btn.active .one{
+.btn.active .um{
     top: 45%;
     left: 25%;
     transform: rotate(45deg);
 }
 
-.btn.active .two{
+.btn.active .dois{
   opacity: 0;
 }
 
-.btn.active .three{
+.btn.active .tres{
     top: 45%;
     left: 25%;
     transform: rotate(-45deg);
