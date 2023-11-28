@@ -284,6 +284,9 @@ body{
   background-color: #c7dbff;
 }
 
+.btn:hover  {
+  background-color: #3d3c3c;
+}
 
 .flake::selection {
     background-color: transparent;
