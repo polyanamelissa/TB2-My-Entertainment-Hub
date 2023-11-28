@@ -280,6 +280,11 @@ body{
   display: block;
 }
 
+.menu:hover  {
+  background-color: #c7dbff;
+}
+
+
 .flake::selection {
     background-color: transparent;
 }
